@@ -1,0 +1,207 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+/* NAV Container */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== LOGO ===== */
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logoIcon {
+  height: 52px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+.logoIcon:hover {
+  transform: scale(1.05);
+}
+
+/* ===== BURGER ===== */
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.bar {
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.open1 { transform: rotate(45deg) translate(4px, 5px); }
+.open2 { opacity: 0; }
+.open3 { transform: rotate(-45deg) translate(4px, -5px); }
+
+/* ===== MENU ===== */
+.menu {
+  display: none;
+}
+.menuLink {
+  padding: 0.6rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.25s ease;
+}
+.menuLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), #00c6ff);
+  transition: width 0.3s ease;
+}
+.menuLink:hover {
+  color: var(--color-primary-hover);
+}
+.menuLink:hover::after {
+  width: 100%;
+}
+
+/* ===== LANG SWITCHER ===== */
+.langSwitcher {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-left: var(--spacing-md);
+}
+.langBtn {
+  background: rgba(243, 244, 246, 0.8);
+  color: var(--color-text);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 20px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.langBtn:hover {
+  background: linear-gradient(90deg, var(--color-primary), #00c6ff);
+  color: var(--color-cta-text);
+  border-color: transparent;
+}
+.langActive {
+  background: linear-gradient(90deg, var(--color-primary), #00c6ff);
+  color: var(--color-cta-text);
+  border-color: transparent;
+}
+
+/* ===== MOBILE MENU ===== */
+.mobileMenu {
+  position: fixed;
+  top: 70px; /* juste en dessous du header */
+  right: -320px;
+  width: 75%;
+  max-width: 320px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-lg) var(--spacing-md);
+  border-radius: 12px 0 0 12px;
+  box-shadow: -4px 4px 20px rgba(0, 0, 0, 0.12);
+  transition: right 0.3s ease;
+  z-index: 2002;
+}
+.mobileMenu.open {
+  right: 0;
+}
+.mobileMenu .menuLink {
+  font-size: 1.05rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Overlay qui n’assombrit plus le Hero */
+.overlay {
+  display: none;
+}
+
+/* ===== CTA Calendly ===== */
+.ctaCalendly {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: var(--color-cta-text);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.85rem 2rem;
+  border-radius: 14px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.ctaCalendly::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.3), rgba(255,255,255,0));
+  transform: rotate(45deg) translateX(-100%);
+  transition: transform 0.5s ease;
+}
+.ctaCalendly:hover::before {
+  transform: rotate(45deg) translateX(0);
+}
+.ctaCalendly:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.3);
+}
+.ctaCalendly:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+.ctaCalendly span.emoji {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+.ctaCalendly:hover span.emoji {
+  transform: rotate(15deg) translateY(-2px);
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 768px) {
+  .burger { display: none; }
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+  }
+  .mobileMenu, .overlay { display: none; }
+}
+
