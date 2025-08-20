@@ -100,7 +100,7 @@ export default async function RootLayout(props: { children: React.ReactNode; par
   };
 
   return (
-    <html lang={locale || "fr"}>
+    <html lang={locale}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/svg+xml" href="/logo-transparent-svg.svg" />
