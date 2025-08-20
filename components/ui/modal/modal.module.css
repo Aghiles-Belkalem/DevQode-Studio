@@ -64,7 +64,7 @@
 
 .closeButton:hover,
 .closeButton:focus {
-  background: rgba(255, 255, 255, 1);
+  background: rgb(255, 255, 255);
   color: var(--color-primary, #0070f3);
   outline: 2px solid transparent;
   transform: rotate(90deg);
