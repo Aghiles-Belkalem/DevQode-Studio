@@ -18,11 +18,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
-  const { locale } = await params; // ✅ await avant de lire locale
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params; // ✅ params doit être await
   const t = await getTranslations(locale);
 
   const baseUrl = "https://devqode-studio.com";
+  const imageUrl = `${baseUrl}/images/logo-png.png`; // ✅ nouvelle image
 
   return {
     title: t.seo?.title || "DevQode Studio",
@@ -44,7 +45,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       type: "website",
       images: [
         {
-          url: `${baseUrl}/images/og-image.png`,
+          url: imageUrl,
           width: 1200,
           height: 630,
           alt: t.seo?.title,
@@ -56,7 +57,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       title: t.seo?.title,
       description: t.seo?.description,
       creator: "@DevQodeStudio",
-      images: [`${baseUrl}/images/og-image.png`],
+      images: [imageUrl],
     },
     robots: {
       index: true,
@@ -66,12 +67,13 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   };
 }
 
-export default async function RootLayout(props: { children: React.ReactNode; params: { locale: string } }) {
+export default async function RootLayout(props: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
   const { children } = props;
-  const { locale } = await props.params; // ✅ await avant de lire locale
+  const { locale } = await props.params; // ✅ params doit être await
   const t = await getTranslations(locale);
 
   const baseUrl = "https://devqode-studio.com";
+  const imageUrl = `${baseUrl}/images/logo-png.png`; // ✅ nouvelle image
 
   // JSON-LD Organisation
   const businessJsonLd = {
@@ -79,7 +81,7 @@ export default async function RootLayout(props: { children: React.ReactNode; par
     "@type": "Organization",
     name: "DevQode Studio",
     url: baseUrl,
-    logo: `${baseUrl}/images/og-image.png`,
+    logo: imageUrl,
     sameAs: [
       "https://www.linkedin.com/company/devqode-studio/",
       "https://www.instagram.com/devqode.studio",
@@ -120,5 +122,6 @@ export default async function RootLayout(props: { children: React.ReactNode; par
     </html>
   );
 }
+
 
 
