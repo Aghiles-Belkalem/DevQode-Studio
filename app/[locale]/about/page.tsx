@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import styles from "./about.module.css";
 import { useTranslations } from "../../../hooks/useTranslations";
 import ContactForm from "@/components/ui/contact/contactForm";
@@ -41,9 +42,12 @@ export default function About() {
           </button>
         </div>
         <div className={styles.heroImage}>
-          <img
+          <Image
             src="/images/Pink and Blue Neon Facebook Profile Picture (2).png"
             alt="Photo de profil DevQode Studio"
+            width={500}   // à ajuster selon la vraie taille
+            height={500}
+            priority      // force le préchargement
           />
         </div>
       </section>
@@ -51,15 +55,14 @@ export default function About() {
       {/* Section Compétences */}
       <section className={styles.skills}>
         <h2>{t.about?.skillsTitle || "Expertise technique & créative"}</h2>
-       <div className={styles.skillsGrid}>
-  {Object.values(t.about.skills).map((skill: any, i: number) => (
-    <div key={i} className={styles.skill}>
-      <h3>{skill.title}</h3>
-      <p>{skill.description}</p>
-    </div>
-  ))}
-</div>
-
+        <div className={styles.skillsGrid}>
+          {Object.values(t.about.skills).map((skill: any, i: number) => (
+            <div key={i} className={styles.skill}>
+              <h3>{skill.title}</h3>
+              <p>{skill.description}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Section Vision */}
@@ -73,7 +76,7 @@ export default function About() {
 
       {/* Call-to-action */}
       <aside className={styles.ctaSection}>
-        <h2>{t.about?.ctaTitle || "Prêt à concrétiser votre projet ?"}</h2>
+        <h2>{t.about?.ctaTitle || "Prêt à concrétiser votre projet ?"}</h2>
         <p>
           {t.about?.ctaContent ||
             "Échangeons sur vos besoins et construisons ensemble une solution digitale sur mesure, efficace et design."}
@@ -93,3 +96,4 @@ export default function About() {
     </main>
   );
 }
+
