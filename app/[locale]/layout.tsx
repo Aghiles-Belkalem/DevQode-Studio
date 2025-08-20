@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
-  const { locale } = await params; // ✅ await avant de lire locale
+  const { locale } = params; // ✅ await avant de lire locale
   const t = await getTranslations(locale);
 
   const baseUrl = "https://devqode-studio.com";
@@ -68,7 +68,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 
 export default async function RootLayout(props: { children: React.ReactNode; params: { locale: string } }) {
   const { children } = props;
-  const { locale } = await props.params; // ✅ await avant de lire locale
+  const { locale } = props.params; 
   const t = await getTranslations(locale);
 
   const baseUrl = "https://devqode-studio.com";
