@@ -20,12 +20,11 @@ export const fr = {
     bookSlot: 'Réservez votre appel stratégique (places limitées)',
     ctaCalendly: "📅 Réservez un appel gratuit",
 
- guarantees: [
-      "✅ Results guaranteed within 90 days",
-      "✅ Express delivery 7-14 days",
-      "✅ VIP support included for 6 months"
-    ],
-    
+guarantees: [
+  "✅ Résultats garantis sous 90 jours",
+  "✅ Livraison express en 7 à 14 jours",
+  "✅ Support VIP inclus pendant 6 mois"
+],
     socialProof: [
       { value: "+30", label: "Projets livrés" },
       { value: "+20", label: "Clients satisfaits" },
