@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# 🚀 DevQode Studio
 
-First, run the development server:
+**DevQode Studio** est une agence digitale spécialisée dans la création de solutions **web et mobiles haut de gamme**.  
+Le projet est construit avec **Next.js 14 (App Router)**, **TypeScript** et une architecture orientée SEO **premium**, pour des performances et un référencement irréprochables.
 
-```bash
+---
+
+## ✨ Fonctionnalités
+
+- 🌐 **Multilingue (FR / EN / PT)** via un système de traductions centralisé  
+- ⚡ **Next.js 14 (App Router)** avec Server Components  
+- 🎨 **UI moderne & responsive** (CSS Modules + Design System custom)  
+- 📈 **SEO Premium** :  
+  - Metadata dynamique (title, description, canonical, hreflang)  
+  - OpenGraph & Twitter Cards  
+  - JSON-LD (Organization + Breadcrumbs)  
+  - Optimisation robots.txt & sitemap.xml  
+- 📬 **Formulaire de contact** (FormSubmit) avec feedback utilisateur  
+- 🧩 Composants réutilisables : Header, Footer, Hero, Services, Contact...  
+- 🛡️ Accessibilité (contraste, navigation clavier, ARIA roles)  
+
+---
+
+## 🛠️ Stack technique
+
+- **Framework** : [Next.js 14](https://nextjs.org/)  
+- **Langage** : [TypeScript](https://www.typescriptlang.org/)  
+- **UI** : React + CSS Modules  
+- **Fonts** : [Geist](https://vercel.com/font) (Google Fonts optimisé)  
+- **Hosting** : [Vercel](https://vercel.com/)  
+- **SEO** : Next.js Metadata API + JSON-LD  
+- **Formulaire** : [FormSubmit](https://formsubmit.co/)  
+
+---
+
+
+---
+
+## 🚀 Déploiement (Vercel + GitHub)
+
+1. Pousser le projet sur GitHub :  
+   ```bash
+   git init
+   git remote add origin git@github.com:USERNAME/devqode-studio.git
+   git add .
+   git commit -m "Initial commit"
+   git push origin main
+Sur Vercel, importer le repo GitHub.
+
+Chaque git push origin main → déploiement automatique 🚀
+
+Les branches de features sont déployées automatiquement en Preview URLs.
+
+🌍 SEO & Internationalisation
+
+generateMetadata → SEO dynamique par locale
+
+hreflang pour FR, EN, PT
+
+JSON-LD :
+
+Organization
+
+Breadcrumbs
+
+Canonical propre (/fr, /en, /pt)
+
+📬 Formulaire de contact
+
+Intégré avec FormSubmit
+
+Protection anti-spam (captcha off, template custom)
+
+Feedback utilisateur (successMessage, errorMessage)
+
+👨‍💻 Développement local
+# Installer les dépendances
+npm install
+
+# Lancer le serveur local
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Build production
+npm run build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Lancer la version buildée
+npm start
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+📌 Roadmap (idées futures)
 
-## Learn More
+ Blog avec contenu optimisé SEO
 
-To learn more about Next.js, take a look at the following resources:
+ Animations Framer Motion
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ Dark mode toggle
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+ Dashboard interne (clients + projets)
 
-## Deploy on Vercel
+🏢 À propos
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+DevQode Studio – Nous développons des solutions digitales premium, sur-mesure, performantes et durables.
+👉 https://devqode-studio.com
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+⚡ Made with passion by DevQode Studio ⚡
