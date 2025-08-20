@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
-  const { locale } = params; // ✅ await avant de lire locale
+  const { locale } = params;
   const t = await getTranslations(locale);
 
   const baseUrl = "https://devqode-studio.com";
