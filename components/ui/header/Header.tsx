@@ -44,9 +44,9 @@ export default function Header() {
         {/* Desktop navigation links */}
         <div className={styles.menu}>
          <Link href={`/`} className={styles.menuLink}>{t.header.home || "Home"}</Link>
-          <Link href="/services" className={styles.menuLink}>{t.header?.services || 'Services'}</Link>
-          <Link href="/about" className={styles.menuLink}>{t.header?.about || 'About'}</Link>
-          <Link href="/legalMentions" className={styles.menuLink}>{t.header?.legalMentions || 'Legal Mentions'}</Link>
+          <Link href="/services" locale={locale}className={styles.menuLink}>{t.header?.services || 'Services'}</Link>
+          <Link href="/about" locale={locale}className={styles.menuLink}>{t.header?.about || 'About'}</Link>
+          <Link href="/legalMentions" locale={locale}className={styles.menuLink}>{t.header?.legalMentions || 'Legal Mentions'}</Link>
           <div className={styles.langSwitcher}>
             <button
               className={`${styles.langBtn} ${locale === 'fr' ? styles.langActive : ''}`}
@@ -93,10 +93,10 @@ export default function Header() {
             ref={menuRef}
             className={`${styles.mobileMenu} ${open ? styles.open : ''}`}
             onClick={(e) => e.stopPropagation()}>
-            <Link href={`/`} className={styles.menuLink}>{t.header.home || "Home"}</Link>
-            <Link href="/services" className={styles.menuLink} onClick={close}>{t.header?.services || 'Services'}</Link>
-            <Link href="/about" className={styles.menuLink} onClick={close}>{t.header?.about || 'About'}</Link>
-            <Link href="/legalMentions" className={styles.menuLink} onClick={close}>{t.header?.legalMentions || 'Legal Mentions'}</Link>
+            <Link href={`/`} locale={locale}className={styles.menuLink}>{t.header.home || "Home"}</Link>
+            <Link href="/services" locale={locale}className={styles.menuLink} onClick={close}>{t.header?.services || 'Services'}</Link>
+            <Link href="/about" locale={locale}className={styles.menuLink} onClick={close}>{t.header?.about || 'About'}</Link>
+            <Link href="/legalMentions" locale={locale}className={styles.menuLink} onClick={close}>{t.header?.legalMentions || 'Legal Mentions'}</Link>
             <div className={styles.langSwitcherMobile}>
               <button
                 className={`${styles.langBtn} ${locale === 'fr' ? styles.langActive : ''}`}
