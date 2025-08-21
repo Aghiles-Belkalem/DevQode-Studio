@@ -2,10 +2,10 @@
   position: sticky;
   top: 0;
   z-index: 2000;
-  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
   transition: background 0.3s ease, backdrop-filter 0.3s ease;
+   background: rgba(255, 255, 255, 0.95); 
 }
 
 /* NAV Container */
@@ -43,6 +43,8 @@
   border: none;
   cursor: pointer;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
+    z-index: 3000; /* passe au-dessus du Hero */
 }
 .bar {
   height: 2px;
