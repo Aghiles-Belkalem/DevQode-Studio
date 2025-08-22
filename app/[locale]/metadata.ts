@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Création site web professionnel | DevQode Studio",
     description: "Expert en création de sites web modernes, développement sur mesure et optimisation SEO. Présent en France, Algérie, Belgique, UK et Portugal.",
-    url: "https://devqode-studio.com/",
+    url: "https://devqodestudio.com/",
     siteName: "DevQode Studio",
     locale: "fr_FR",
     type: "website",
     images: [
       {
-        url: "https://devqode-studio.com/images/og-image.png",
+        url: "https://devqodestudio.com/images/logo-png.png",
         width: 1200,
         height: 630,
         alt: "DevQode Studio - Création site web professionnel",

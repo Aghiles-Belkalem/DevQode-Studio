@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Services de création de site web & application | DevQode Studio",
     description: "Développement web sur mesure, création de sites performants, applications, refonte, SEO et optimisation technique.",
-    url: "https://devqode-studio.com/services",
+    url: "https://devqodestudio.com/services",
     siteName: "DevQode Studio",
     locale: "fr_FR",
     type: "website",
     images: [
       {
-        url: "https://devqode-studio.com/images/og-image.png",
+        url: "https://devqodestudio.com/images/logo-png.png",
         width: 1200,
         height: 630,
         alt: "DevQode Studio - Services web",

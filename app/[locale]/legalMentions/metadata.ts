@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mentions légales | DevQode Studio",
     description: "Mentions légales du site DevQode Studio : éditeur, hébergement, propriété intellectuelle, données personnelles.",
-    url: "https://devqode-studio.com/legalMentions",
+    url: "https://devqodestudio.com/legalMentions",
     siteName: "DevQode Studio",
     locale: "fr_FR",
     type: "website",
     images: [
       {
-        url: "https://devqode-studio.com/images/og-image.png",
+        url: "https://devqodestudio.com/images/logo-png.png",
         width: 1200,
         height: 630,
         alt: "DevQode Studio - Mentions légales",
