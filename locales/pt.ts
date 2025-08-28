@@ -18,7 +18,7 @@ export const pt = {
     ctaDiscover: 'Veja como impulsionamos o seu negócio',
     ctaQuote: 'Obtenha já o seu orçamento gratuito',
     bookSlot: 'Agende a sua chamada estratégica (vagas limitadas)',
-    ctaCalendly: "📅 Marque uma chamada gratuita",
+    ctaCalendly: "📅 Marca jà sem compromisso",
     guarantees: [
     "✅ Entregue no máximo em 14 dias",
     "✅ Revisões gratuitas até aprovação",

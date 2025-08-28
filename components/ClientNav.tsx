@@ -5,5 +5,5 @@ export default function ClientNav() {
   const router = useRouter();
   const pathname = usePathname();
 
-  return <div>{pathname}</div>;
+  return null;
 }
