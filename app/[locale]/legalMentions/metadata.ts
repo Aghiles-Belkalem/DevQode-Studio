@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://devqodestudio.com/images/logo-png.png",
+        url: "https://devqodestudio.com/images/logo-v2.png",
         width: 1200,
         height: 630,
         alt: "DevQode Studio - Mentions légales",

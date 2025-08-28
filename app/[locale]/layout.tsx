@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const t = await getTranslations(locale);
 
   const baseUrl = "https://devqodestudio.com";
-  const imageUrl = `${baseUrl}/images/logo-png.png`; // ✅ nouvelle image
+  const imageUrl = `${baseUrl}/images/logo-v2.png`; // ✅ nouvelle image
 
   return {
     title: t.seo?.title || "DevQode Studio",
@@ -73,7 +73,7 @@ export default async function RootLayout(props: { children: React.ReactNode; par
   const t = await getTranslations(locale);
 
   const baseUrl = "https://devqodestudio.com";
-  const imageUrl = `${baseUrl}/images/logo-png.png`; // ✅ nouvelle image
+  const imageUrl = `${baseUrl}/images/logo-v2.png`; // ✅ nouvelle image
 
   // JSON-LD Organisation
   const businessJsonLd = {

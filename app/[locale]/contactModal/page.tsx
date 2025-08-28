@@ -1,5 +1,3 @@
-"use client";
-
 import ContactForm from "@/components/ui/contact/contactForm";
 
 export default function ContactModalPage() {
