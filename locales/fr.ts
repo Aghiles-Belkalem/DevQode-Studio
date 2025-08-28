@@ -21,9 +21,9 @@ export const fr = {
     ctaCalendly: "📅 Réservez un appel gratuit",
 
 guarantees: [
-  "✅ Résultats garantis sous 90 jours",
-  "✅ Livraison express en 7 à 14 jours",
-  "✅ Support VIP inclus pendant 6 mois"
+"✅ Livré sous 14 jours maximum",
+"✅ Révisions gratuites jusqu'à validation",
+"✅ Support VIP inclus 6 mois"
 ],
     socialProof: [
       { value: "+30", label: "Projets livrés" },
@@ -47,10 +47,11 @@ guarantees: [
         title: "Graille Zone",
         description: "Landing page futuriste pour un resto concept",
       },
-      nouchka: {
-        title: "Nouchka",
-        description: "E-commerce chic et performant",
-      },
+     awa: {
+  title: "AWA Consulting",
+  description: "Conseil haut de gamme pour créateurs et dirigeants d’entreprise.",
+},
+
     }
   },
 
@@ -88,53 +89,54 @@ guarantees: [
     personalDataContent: "Les informations personnelles collectées via les formulaires de contact sont destinées uniquement à DevQode Studio et ne seront jamais transmises à des tiers sans consentement préalable. Conformément à la loi « Informatique et Libertés » et au RGPD, vous disposez d’un droit d’accès, de rectification et de suppression de vos données. Pour exercer ce droit, contactez-nous à l’adresse belkalemaghiles@gmail.com.",
   },
   
-  services: {
-    title: "Services de développement web sur mesure – Création de sites performants et optimisés",
-    intro: "En tant que développeur web full stack expérimenté, je conçois des sites et applications qui allient design, performance et optimisation SEO pour vous aider à atteindre vos objectifs en ligne.",
-    block1Title: "Création de sites vitrines modernes et optimisés",
-    block1Content: "Donnez à votre entreprise une image professionnelle avec un site vitrine rapide, responsive et pensé pour convertir vos visiteurs en clients. Design unique, mobile first et optimisé pour Google.",
-    block2Title: "Développement d’applications web sur mesure",
-    block2Content: "De l’idée au produit fini, je développe des applications web performantes avec Next.js, React et TypeScript. Fonctionnalités personnalisées, sécurité renforcée et évolutivité garantie.",
-    block3Title: "Refonte et optimisation de sites existants",
-    block3Content: "Améliorez les performances, le design et le référencement de votre site actuel. Audit complet, optimisation du temps de chargement, amélioration UX et mise à jour des technologies.",
-    block4Title: "SEO technique et optimisation de la performance",
-    block4Content: "Maximisez votre visibilité sur les moteurs de recherche grâce à un code optimisé, une structure claire et un contenu ciblé. Analyse des mots-clés, optimisation des balises et stratégie SEO sur mesure.",
-    block5Title: "Maintenance et support technique",
-    block5Content: "Assurez la stabilité et la sécurité de votre site grâce à un suivi régulier, des mises à jour techniques et un support réactif en cas de problème.",
-    ctaTitle: "Prêt à booster votre présence en ligne ?",
-    ctaContent: "Contactez-moi dès aujourd’hui pour discuter de votre projet et obtenir un devis gratuit.",
-    ctaButton: "Demander un devis",
-  },
-  
-  about: {
-    title: "Transformez vos idées en expériences digitales qui cartonnent",
-    intro: "Je conçois et développe des sites web et applications mobiles performants, modernes et centrés sur vos utilisateurs.",
-    cta: "Parlez de votre projet",
-    skillsTitle: "Expertise technique & créative",
-    skills: {
-      webMobile: {
-        title: "Web & Mobile",
-        description: "Développement React, Next.js et React Native. Des solutions rapides, SEO-friendly et parfaitement responsive."
-      },
-      uiux: {
-        title: "UI / UX Design",
-        description: "Design intuitif et moderne qui convertit vos visiteurs en clients fidèles."
-      },
-      seo: {
-        title: "SEO & Performance",
-        description: "Optimisation technique et stratégique pour booster votre visibilité et vos conversions."
-      },
-      support: {
-        title: "Maintenance & Support",
-        description: "Suivi régulier, mises à jour et support technique pour garantir la pérennité de vos projets."
-      }
+services: {
+  title: "Services web sur mesure – Des sites performants et élégants",
+  intro: "Nous créons des sites et applications qui mettent en valeur votre entreprise, attirent vos clients et boostent vos résultats en ligne.",
+  block1Title: "Sites vitrines modernes et optimisés",
+  block1Content: "Offrez à votre entreprise une présence en ligne professionnelle avec un site rapide, intuitif et pensé pour convertir vos visiteurs en clients.",
+  block2Title: "Applications web sur mesure",
+  block2Content: "Nous transformons vos idées en solutions digitales performantes, fiables et évolutives, parfaitement adaptées à vos besoins.",
+  block3Title: "Refonte et optimisation de sites existants",
+  block3Content: "Améliorez l’expérience utilisateur, le design et la visibilité de votre site actuel grâce à une refonte soignée et des optimisations ciblées.",
+  block4Title: "SEO et performance",
+  block4Content: "Maximisez votre visibilité et vos conversions grâce à un site rapide, structuré et optimisé pour les moteurs de recherche.",
+  block5Title: "Maintenance et support",
+  block5Content: "Nous assurons la sécurité, la stabilité et la pérennité de votre site grâce à un suivi régulier et un support réactif.",
+  ctaTitle: "Prêt à booster votre présence en ligne ?",
+  ctaContent: "Contactez-nous dès aujourd’hui pour discuter de votre projet et obtenir un devis gratuit.",
+  ctaButton: "Demander un devis",
+},
+
+about: {
+  title: "Transformons vos idées en expériences digitales impactantes",
+  intro: "Nous concevons des sites et applications qui séduisent vos clients et renforcent votre présence en ligne.",
+  cta: "Parlez-nous de votre projet",
+  skillsTitle: "Notre expertise",
+  skills: {
+    webMobile: {
+      title: "Web & Mobile",
+      description: "Des solutions intuitives et performantes, adaptées à tous les appareils et faciles à utiliser pour vos clients."
     },
-    visionTitle: "Ma vision",
-    visionContent: "Créer des solutions digitales qui allient esthétisme, performance et ROI. Votre succès en ligne est ma priorité.",
-    ctaTitle: "Prêt à concrétiser votre projet ?",
-    ctaContent: "Échangeons sur vos besoins et construisons ensemble une solution digitale sur mesure, efficace et design.",
-    ctaButton: "Demander un devis gratuit"
+    uiux: {
+      title: "Design & expérience utilisateur",
+      description: "Des interfaces élégantes et ergonomiques qui séduisent vos visiteurs et les incitent à passer à l’action."
+    },
+    seo: {
+      title: "Visibilité & performance",
+      description: "Nous optimisons votre site pour qu’il soit rapide, bien référencé et qu’il attire plus de visiteurs qualifiés."
+    },
+    support: {
+      title: "Maintenance & assistance",
+      description: "Nous assurons le suivi, les mises à jour et le support pour garantir le bon fonctionnement de vos solutions digitales."
+    }
   },
+  visionTitle: "Notre vision",
+  visionContent: "Créer des expériences digitales haut de gamme qui combinent design, performance et résultats concrets pour votre entreprise.",
+  ctaTitle: "Prêt à concrétiser votre projet ?",
+  ctaContent: "Discutons ensemble de vos besoins et construisons une solution digitale sur mesure et efficace.",
+  ctaButton: "Demander un devis gratuit"
+},
+
 
   contact: {
     title: "Contactez-nous",

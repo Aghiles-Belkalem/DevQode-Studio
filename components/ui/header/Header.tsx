@@ -10,6 +10,7 @@ import { useRouter, usePathname } from 'next/navigation';
 export default function Header() {
   const { t, locale } = useTranslations();
   const [open, setOpen] = useState(false);
+  const [theme, setTheme] = useState<'dark'|'light'>('dark');
   const menuRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const pathname = usePathname();
@@ -19,6 +20,13 @@ export default function Header() {
     if (newLocale === locale) return;
     const newPath = pathname.replace(/^\/[a-z-]+/, `/${newLocale}`);
     router.push(newPath);
+  };
+
+  // Theme toggle
+  const toggleTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
   };
 
   useEffect(() => {
@@ -43,29 +51,36 @@ export default function Header() {
 
         {/* Desktop navigation links */}
         <div className={styles.menu}>
-         <Link href={`/`} className={styles.menuLink}>{t.header.home || "Home"}</Link>
-          <Link href="/services" locale={locale}className={styles.menuLink}>{t.header?.services || 'Services'}</Link>
-          <Link href="/about" locale={locale}className={styles.menuLink}>{t.header?.about || 'About'}</Link>
-          <Link href="/legalMentions" locale={locale}className={styles.menuLink}>{t.header?.legalMentions || 'Legal Mentions'}</Link>
+          <Link href={`/`} className={styles.menuLink}>{t.header.home || "Home"}</Link>
+          <Link href="/services" className={styles.menuLink}>{t.header?.services || 'Services'}</Link>
+          <Link href="/about" className={styles.menuLink}>{t.header?.about || 'About'}</Link>
+          <Link href="/legalMentions" className={styles.menuLink}>{t.header?.legalMentions || 'Legal Mentions'}</Link>
+
+          {/* Lang switcher */}
           <div className={styles.langSwitcher}>
-            <button
-              className={`${styles.langBtn} ${locale === 'fr' ? styles.langActive : ''}`}
-              onClick={() => handleLocaleChange('fr')}
-              aria-label="Français"
-              type="button"
-            >🇫🇷 FR</button>
-            <button
-              className={`${styles.langBtn} ${locale === 'en' ? styles.langActive : ''}`}
-              onClick={() => handleLocaleChange('en')}
-              aria-label="English"
-              type="button"
-            >🇬🇧 EN</button>
-            <button
-              className={`${styles.langBtn} ${locale === 'pt' ? styles.langActive : ''}`}
-              onClick={() => handleLocaleChange('pt')}
-              aria-label="Português"
-              type="button"
-            >🇵🇹 PT</button>
+            {['fr','en','pt'].map(l => (
+              <button
+                key={l}
+                className={`${styles.langBtn} ${locale===l ? styles.langActive:''}`}
+                onClick={()=>handleLocaleChange(l)}
+                aria-label={l.toUpperCase()}
+                type="button"
+              >{l==='fr'?'🇫🇷':l==='en'?'🇬🇧':'🇵🇹'} {l.toUpperCase()}</button>
+            ))}
+          </div>
+
+          {/* Theme toggle */}
+          <div className={styles.themeSwitch}>
+            <input 
+              type="checkbox" 
+              id="theme-toggle" 
+              checked={theme==='light'} 
+              onChange={toggleTheme} 
+              className={styles.themeCheckbox} 
+            />
+            <label htmlFor="theme-toggle" className={styles.themeLabel}>
+              <span className={styles.ball}></span>
+            </label>
           </div>
         </div>
 
@@ -73,10 +88,7 @@ export default function Header() {
         <button
           className={styles.burger}
           aria-expanded={open}
-          onClick={(e) => {
-            e.stopPropagation();
-            toggle();
-          }}
+          onClick={(e) => { e.stopPropagation(); toggle(); }}
           aria-label="Ouvrir ou fermer le menu"
           type="button"
         >
@@ -87,35 +99,41 @@ export default function Header() {
 
         {open && <div className={styles.overlay} onClick={close} />}
 
-        {/* Mobile menu, only visible when open */}
+        {/* Mobile menu */}
         {open && (
           <div
             ref={menuRef}
             className={`${styles.mobileMenu} ${open ? styles.open : ''}`}
             onClick={(e) => e.stopPropagation()}>
-            <Link href={`/`} locale={locale}className={styles.menuLink}>{t.header.home || "Home"}</Link>
-            <Link href="/services" locale={locale}className={styles.menuLink} onClick={close}>{t.header?.services || 'Services'}</Link>
-            <Link href="/about" locale={locale}className={styles.menuLink} onClick={close}>{t.header?.about || 'About'}</Link>
-            <Link href="/legalMentions" locale={locale}className={styles.menuLink} onClick={close}>{t.header?.legalMentions || 'Legal Mentions'}</Link>
+            <Link href={`/`} className={styles.menuLink}>{t.header.home || "Home"}</Link>
+            <Link href="/services" className={styles.menuLink} onClick={close}>{t.header?.services || 'Services'}</Link>
+            <Link href="/about" className={styles.menuLink} onClick={close}>{t.header?.about || 'About'}</Link>
+            <Link href="/legalMentions" className={styles.menuLink} onClick={close}>{t.header?.legalMentions || 'Legal Mentions'}</Link>
+
             <div className={styles.langSwitcherMobile}>
-              <button
-                className={`${styles.langBtn} ${locale === 'fr' ? styles.langActive : ''}`}
-                onClick={() => { handleLocaleChange('fr'); close(); }}
-                aria-label="Français"
-                type="button"
-              >🇫🇷 FR</button>
-              <button
-                className={`${styles.langBtn} ${locale === 'en' ? styles.langActive : ''}`}
-                onClick={() => { handleLocaleChange('en'); close(); }}
-                aria-label="English"
-                type="button"
-              >🇬🇧 EN</button>
-              <button
-                className={`${styles.langBtn} ${locale === 'pt' ? styles.langActive : ''}`}
-                onClick={() => { handleLocaleChange('pt'); close(); }}
-                aria-label="Português"
-                type="button"
-              >🇵🇹 PT</button>
+              {['fr','en','pt'].map(l => (
+                <button
+                  key={l}
+                  className={`${styles.langBtn} ${locale===l ? styles.langActive:''}`}
+                  onClick={() => { handleLocaleChange(l); close(); }}
+                  aria-label={l.toUpperCase()}
+                  type="button"
+                >{l==='fr'?'🇫🇷':l==='en'?'🇬🇧':'🇵🇹'} {l.toUpperCase()}</button>
+              ))}
+            </div>
+
+            {/* Mobile theme toggle */}
+            <div className={styles.themeSwitchMobile}>
+              <input 
+                type="checkbox" 
+                id="theme-toggle-mobile" 
+                checked={theme==='light'} 
+                onChange={toggleTheme} 
+                className={styles.themeCheckbox} 
+              />
+              <label htmlFor="theme-toggle-mobile" className={styles.themeLabel}>
+                <span className={styles.ball}></span>
+              </label>
             </div>
           </div>
         )}
@@ -123,4 +141,3 @@ export default function Header() {
     </header>
   );
 }
-

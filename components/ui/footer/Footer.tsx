@@ -1,11 +1,29 @@
 "use client";
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useTranslations } from '../../../hooks/useTranslations';
 import styles from './footer.module.css';
 
 export default function Footer() {
   const { t } = useTranslations();
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+
+  // Gestion dynamique du logo selon le thème
+  useEffect(() => {
+    const currentTheme = document.documentElement.dataset.theme as 'light' | 'dark';
+    setTheme(currentTheme);
+
+    const observer = new MutationObserver(() => {
+      const newTheme = document.documentElement.dataset.theme as 'light' | 'dark';
+      setTheme(newTheme);
+    });
+
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    return () => observer.disconnect();
+  }, []);
+
+  const logoSrc = theme === 'light' ? '/logo-lightmode.png' : '/logo-transparent-svg.svg';
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -17,7 +35,7 @@ export default function Footer() {
         {/* Logo + tagline */}
         <div className={styles.column}>
           <div className={styles.logo}>
-            <img src="/logo-transparent-svg.svg" alt="DevQode Studio logo" />
+            <img src={logoSrc} alt="DevQode Studio logo" />
           </div>
           <p className={styles.tagline}>{t.footer?.tagline || "Création de sites web haut de gamme"}</p>
         </div>
@@ -26,43 +44,25 @@ export default function Footer() {
         <div className={styles.column}>
           <h3 className={styles.heading}>Navigation</h3>
           <ul className={styles.navList}>
-             <Link href={`/`} className={styles.menuLink}>{t.header.home || "Home"}</Link>
-          <Link href="/services" className={styles.menuLink}>{t.header?.services || 'Services'}</Link>
-          <Link href="/about" className={styles.menuLink}>{t.header?.about || 'About'}</Link>
-          <Link href="/legalMentions" className={styles.menuLink}>{t.header?.legalMentions || 'Legal Mentions'}</Link>
+            <Link href={`/`} className={styles.menuLink}>{t.header.home || "Home"}</Link>
+            <Link href="/services" className={styles.menuLink}>{t.header?.services || 'Services'}</Link>
+            <Link href="/about" className={styles.menuLink}>{t.header?.about || 'About'}</Link>
+            <Link href="/legalMentions" className={styles.menuLink}>{t.header?.legalMentions || 'Legal Mentions'}</Link>
           </ul>
         </div>
 
         {/* Contact */}
         <div className={styles.column}>
           <h3 className={styles.heading}>{t.footer?.contactUs || 'Contact'}</h3>
-          <a
-            className={styles.contactLink}
-            href="https://wa.me/33615406661"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Contact WhatsApp France +33 6 15 40 66 61"
-          >
+          <a className={styles.contactLink} href="https://wa.me/33615406661" target="_blank" rel="noopener noreferrer" aria-label="Contact WhatsApp France +33 6 15 40 66 61">
             <WhatsappIcon />
             +33 6 15 40 66 61
           </a>
-          <a
-            className={styles.contactLink}
-            href="https://wa.me/351926576544"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Contact WhatsApp France +351 926 576 544"
-          >
-              <WhatsappIcon />
+          <a className={styles.contactLink} href="https://wa.me/351926576544" target="_blank" rel="noopener noreferrer" aria-label="Contact WhatsApp Portugal +351 926 576 544">
+            <WhatsappIcon />
             +351 926 576 544
           </a>
-          <a
-            className={styles.contactLink}
-            href="https://www.linkedin.com/in/aghiles-belkalem-10871323b/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn DevQode Studio"
-          >
+          <a className={styles.contactLink} href="https://www.linkedin.com/in/aghiles-belkalem-10871323b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn DevQode Studio">
             <LinkedInIcon />
             LinkedIn
           </a>
@@ -94,6 +94,3 @@ function LinkedInIcon() {
     </svg>
   );
 }
-
-
-

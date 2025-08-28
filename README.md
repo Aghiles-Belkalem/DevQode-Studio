@@ -100,6 +100,6 @@ npm start
 🏢 À propos
 
 DevQode Studio – Nous développons des solutions digitales premium, sur-mesure, performantes et durables.
-👉 https://devqode-studio.com
+👉 https://devqodestudio.com
 
 ⚡ Made with passion by DevQode Studio ⚡

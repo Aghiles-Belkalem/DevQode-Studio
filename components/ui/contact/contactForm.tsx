@@ -66,7 +66,7 @@ export default function ContactForm() {
         {/* FormSubmit configuration */}
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_template" value="box" />
-        <input type="hidden" name="_next" value="https://devqode-studio.com/thank-you" />
+        <input type="hidden" name="_next" value="https://devqodestudio.com/thank-you" />
 
         <label htmlFor="firstName" className={styles.label}>
           {t.contact?.firstName || 'Prénom'}

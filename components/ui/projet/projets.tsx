@@ -11,10 +11,10 @@ export default function ProjectsSection() {
 
   const projects: Project[] = [
     {
-      title: t.projects?.mk?.title || 'MK Detailing',
-      description: t.projects?.mk?.description || 'Site vitrine moderne et SEO optimisé',
-      image: '/images/projetcs/MK Detailing Garage Azazga.png',
-      url: 'https://mk-detailing-garageazazga.vercel.app/'
+      title: t.projects?.awa?.title || 'AWA Consulting',
+      description: t.projects?.awa?.description || 'Conseil haut de gamme pour créateurs et dirigeants d’entreprise.',
+      image: '/images/projetcs/www.awaconsultinggroup.com_.png',
+      url: 'https://www.awaconsultinggroup.com/'
     },
     {
       title: t.projects?.graille?.title || 'Graille Zone',
@@ -23,13 +23,13 @@ export default function ProjectsSection() {
       url: 'https://graille-zone33.vercel.app/'
     },
     {
-      title: t.projects?.nouchka?.title || 'Nouchka',
-      description: t.projects?.nouchka?.description || 'E-commerce chic et performant',
-      image: '/images/projetcs/MacBook Pro-1740388704201.jpeg',
-      url: 'https://nouchka.fr'
+      title: t.projects?.mk?.title || 'MK Detailing',
+      description: t.projects?.mk?.description || 'Site vitrine moderne et SEO optimisé',
+      image: '/images/projetcs/MK Detailing Garage Azazga.png',
+      url: 'https://mk-detailing-garageazazga.vercel.app/'
     }
   ];
-
+  
   return (
     <section className={styles.projectsSection}>
      <h2>{t.projects?.title || "Nos Réalisations"}</h2>

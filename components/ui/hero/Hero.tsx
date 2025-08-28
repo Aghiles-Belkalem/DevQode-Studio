@@ -8,8 +8,8 @@ import ContactForm from '../contact/contactForm';
 import Modal from '../modal/modal';
 
 interface SocialProofItem {
-    value: string;
-    label: string;
+  value: string;
+  label: string;
 }
 
 export default function HeroLandingImproved() {
@@ -20,6 +20,7 @@ export default function HeroLandingImproved() {
     { src: '/images/logoMK.png', alt: 'Logo MK Detailing' },
     { src: '/images/LogoOff Graille zone.png', alt: 'Logo Graille Zone' },
     { src: '/images/Capture_d_écran_2025-07-29_004817-removebg-preview.png', alt: 'Logo Nouchka' },
+     { src: '/images/logo-awa.jpg', alt: 'Logo Awa Consulting' },
   ];
 
   const calendlyUrl = 'https://calendly.com/belkalemaghiles/30min';
@@ -49,37 +50,32 @@ export default function HeroLandingImproved() {
             >
               {t.services?.ctaButton || "Devis gratuit en 1 clic"}
             </button>
-<a
-  href={calendlyUrl}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="ctaCalendly"
->
-  {t.hero.ctaCalendly}
-</a>
-
-
+            <a
+              href={calendlyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.ctaCalendly}
+            >
+              {t.hero?.ctaCalendly || "Planifiez un rendez-vous"}
+            </a>
           </div>
 
           {/* Garanties */}
-       <div className={styles.guarantees}>
-  {t.hero.guarantees.map((text: string, i: number) => (
-    <span key={i}>{text}</span>
-  ))}
-</div>
-
+          <div className={styles.guarantees}>
+            {t.hero?.guarantees?.map((text: string, i: number) => (
+              <span key={i}>{text}</span>
+            ))}
+          </div>
 
           {/* Preuves sociales */}
-           {/* Preuves sociales */}
-         <div className={styles.socialProof}>
-  {t.hero.socialProof.map((item: SocialProofItem, i: number) => (
-    <div key={i}>
-      <strong>{item.value}</strong>
-      <span>{item.label}</span>
-    </div>
-  ))}
-</div>
-
+          <div className={styles.socialProof}>
+            {t.hero?.socialProof?.map((item: SocialProofItem, i: number) => (
+              <div key={i}>
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
+              </div>
+            ))}
+          </div>
 
           {/* Logos Clients */}
           <p className={styles.clientsLabel}>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import styles from "./about.module.css";
 import { useTranslations } from "../../../hooks/useTranslations";
 import ContactForm from "@/components/ui/contact/contactForm";
@@ -30,7 +29,7 @@ export default function About() {
           </h1>
           <p>
             {t.about?.intro ||
-              "Je conçois et développe des sites web et applications mobiles performants, modernes et centrés sur vos utilisateurs."}
+              "Nous concevons des sites web et applications mobiles performants, modernes et centrés sur vos utilisateurs."}
           </p>
           <button
             className={styles.ctaButton}
@@ -40,15 +39,6 @@ export default function About() {
           >
             {t.about?.cta || "Parlez de votre projet"}
           </button>
-        </div>
-        <div className={styles.heroImage}>
-          <Image
-            src="/images/Pink and Blue Neon Facebook Profile Picture (2).png"
-            alt="Photo de profil DevQode Studio"
-            width={500}   // à ajuster selon la vraie taille
-            height={500}
-            priority      // force le préchargement
-          />
         </div>
       </section>
 
@@ -67,7 +57,7 @@ export default function About() {
 
       {/* Section Vision */}
       <section className={styles.vision}>
-        <h2>{t.about?.visionTitle || "Ma vision"}</h2>
+        <h2>{t.about?.visionTitle || "Notre vision"}</h2>
         <p>
           {t.about?.visionContent ||
             "Créer des solutions digitales qui allient esthétisme, performance et ROI. Votre succès en ligne est ma priorité."}

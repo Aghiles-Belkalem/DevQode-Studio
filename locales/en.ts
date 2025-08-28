@@ -21,10 +21,10 @@ export const en = {
     bookSlot: 'Book your strategy call (limited spots)',
     ctaCalendly: "📅 Book a free call",
 
-    guarantees: [
-      "✅ Results guaranteed within 90 days",
-      "✅ Express delivery 7-14 days",
-      "✅ VIP support included for 6 months"
+  guarantees: [
+  "✅ Delivered within 14 days maximum",
+  "✅ Free revisions until approval",
+  "✅ VIP support included for 6 months"
     ],
     socialProof: [
       { value: "+30", label: "Projects delivered" },
@@ -46,10 +46,11 @@ export const en = {
       title: "Graille Zone",
       description: "Futuristic landing page for a concept restaurant",
     },
-    nouchka: {
-      title: "Nouchka",
-      description: "Elegant and high-performing e-commerce platform",
-    }},
+    awa: {
+  title: "AWA Consulting",
+  description: "High-end consulting for entrepreneurs and business leaders",
+},
+},
   testimonials: [
     {
       name: "Sophie M.",
@@ -84,53 +85,54 @@ export const en = {
     personalDataContent: "Personal information collected via contact forms is intended solely for DevQode Studio and will never be transmitted to third parties without prior consent. In accordance with the 'Informatique et Libertés' law and the GDPR, you have the right to access, rectify, and delete your data. To exercise this right, contact us at belkalemaghiles@gmail.com.",
   },
   
-  services: {
-    title: "Custom Web Development Services – Creating High-Performance Optimized Websites",
-    intro: "As an experienced full stack web developer, I design websites and applications that combine design, performance, and SEO optimization to help you achieve your online goals.",
-    block1Title: "Modern and Optimized Showcase Websites",
-    block1Content: "Give your business a professional image with a fast, responsive showcase website designed to convert visitors into customers. Unique design, mobile-first and Google-optimized.",
-    block2Title: "Custom Web Application Development",
-    block2Content: "From idea to finished product, I develop high-performance web applications with Next.js, React, and TypeScript. Custom features, enhanced security, and guaranteed scalability.",
-    block3Title: "Website Redesign and Optimization",
-    block3Content: "Improve your site's performance, design, and SEO. Full audit, loading speed optimization, UX improvements, and technology updates.",
-    block4Title: "Technical SEO and Performance Optimization",
-    block4Content: "Maximize your visibility on search engines with optimized code, clear structure, and targeted content. Keyword analysis, tag optimization, and tailored SEO strategy.",
-    block5Title: "Maintenance and Technical Support",
-    block5Content: "Ensure your site's stability and security with regular monitoring, technical updates, and responsive support in case of issues.",
-    ctaTitle: "Ready to boost your online presence?",
-    ctaContent: "Contact me today to discuss your project and get a free quote.",
-    ctaButton: "Request a Quote"
-  },
-  
-  about: {
-    title: "Turn your ideas into digital experiences that rock",
-    intro: "I design and develop high-performing, modern websites and mobile applications focused on your users.",
-    cta: "Talk about your project",
-    skillsTitle: "Technical & Creative Expertise",
-    skills: {
-      webMobile: {
-        title: "Web & Mobile",
-        description: "React, Next.js and React Native development. Fast, SEO-friendly and fully responsive solutions."
-      },
-      uiux: {
-        title: "UI / UX Design",
-        description: "Intuitive and modern design that converts visitors into loyal customers."
-      },
-      seo: {
-        title: "SEO & Performance",
-        description: "Technical and strategic optimization to boost your visibility and conversions."
-      },
-      support: {
-        title: "Maintenance & Support",
-        description: "Regular monitoring, updates, and technical support to ensure your projects' longevity."
-      }
+ services: {
+  title: "Tailored Web Services – High-Performance & Elegant Sites",
+  intro: "We create websites and applications that showcase your business, attract clients, and boost your online results.",
+  block1Title: "Modern & Optimized Websites",
+  block1Content: "Give your business a professional online presence with a fast, intuitive site designed to convert visitors into clients.",
+  block2Title: "Custom Web Applications",
+  block2Content: "We turn your ideas into reliable, high-performance digital solutions tailored to your needs.",
+  block3Title: "Website Redesign & Optimization",
+  block3Content: "Enhance user experience, design, and visibility of your current site through a careful redesign and targeted optimizations.",
+  block4Title: "SEO & Performance",
+  block4Content: "Maximize your visibility and conversions with a fast, structured, and search-engine-friendly website.",
+  block5Title: "Maintenance & Support",
+  block5Content: "We ensure the security, stability, and longevity of your site with regular monitoring and responsive support.",
+  ctaTitle: "Ready to boost your online presence?",
+  ctaContent: "Contact us today to discuss your project and get a free quote.",
+  ctaButton: "Request a Quote",
+},
+
+about: {
+  title: "Turning Your Ideas into Impactful Digital Experiences",
+  intro: "We design websites and applications that engage your clients and strengthen your online presence.",
+  cta: "Tell us about your project",
+  skillsTitle: "Our Expertise",
+  skills: {
+    webMobile: {
+      title: "Web & Mobile",
+      description: "Intuitive, high-performance solutions adapted to all devices and easy for your clients to use."
     },
-    visionTitle: "My vision",
-    visionContent: "Create digital solutions that combine aesthetics, performance and ROI. Your online success is my priority.",
-    ctaTitle: "Ready to bring your project to life?",
-    ctaContent: "Let's discuss your needs and build together a tailor-made, effective, and beautiful digital solution.",
-    ctaButton: "Request a free quote"
+    uiux: {
+      title: "Design & User Experience",
+      description: "Elegant, user-friendly interfaces that engage visitors and encourage action."
+    },
+    seo: {
+      title: "Visibility & Performance",
+      description: "We optimize your site to be fast, well-ranked, and attract more qualified visitors."
+    },
+    support: {
+      title: "Maintenance & Assistance",
+      description: "We provide monitoring, updates, and support to ensure your digital solutions run smoothly."
+    }
   },
+  visionTitle: "Our Vision",
+  visionContent: "Creating high-end digital experiences that combine design, performance, and tangible results for your business.",
+  ctaTitle: "Ready to bring your project to life?",
+  ctaContent: "Let's discuss your needs and build a tailored, effective digital solution together.",
+  ctaButton: "Request a Free Quote"
+},
+
 
  contact: {
     title: "Contact Us",

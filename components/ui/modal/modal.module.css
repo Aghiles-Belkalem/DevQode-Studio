@@ -1,80 +1,83 @@
-/* --- Overlay --- */
+/* Overlay sombre semi-transparent avec léger flou pour le luxe futuriste */
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(16, 16, 16, 0.72);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  z-index: 3000;
+  background: rgba(10,10,15,0.85);
+  backdrop-filter: blur(10px);
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 1rem;
-  overflow-y: auto;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
 }
 
-/* --- Modal --- */
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* La modale elle-même */
 .modal {
-  background-color: #fff;
-  color: var(--color-text, #222);
-  border-radius: 1.25rem;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
-  width: 100%;
+  background: var(--bg-0);
+  color: var(--tx-0);
+  padding: var(--sp-6);
+  border-radius: var(--r-lg);
+  max-width: 550px;
+  width: 90%;
   max-height: 90vh;
   overflow-y: auto;
-  padding: 1.75rem 1.25rem;
+  box-shadow: 0 0 30px rgba(167,139,250,0.4), 0 0 15px rgba(103,232,249,0.3);
   position: relative;
-  animation: modalIn 0.28s cubic-bezier(.4, 0, .2, 1);
-  line-height: 1.5;
+  transform: translateY(-20px);
+  animation: slideUp 0.35s forwards;
 }
 
-@keyframes modalIn {
-  from {
-    transform: translateY(32px) scale(0.97);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
+@keyframes slideUp {
+  to { transform: translateY(0); }
 }
 
-/* --- Accessibilité : animations réduites --- */
-@media (prefers-reduced-motion: reduce) {
-  .modal {
-    animation: none;
-  }
-}
-
-/* --- Bouton de fermeture --- */
+/* Bouton fermer */
 .closeButton {
   position: absolute;
-  top: 0.9rem;
-  right: 0.9rem;
-  background: rgba(255, 255, 255, 0.85);
+  top: var(--sp-3);
+  right: var(--sp-3);
+  background: none;
   border: none;
+  color: var(--tx-0);
   font-size: 1.5rem;
-  line-height: 1;
-  color: var(--color-text-light, #555);
   cursor: pointer;
-  padding: 0.6rem;
-  border-radius: 50%;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .closeButton:hover,
 .closeButton:focus {
-  background: rgb(255, 255, 255);
-  color: var(--color-primary, #0070f3);
-  outline: 2px solid transparent;
-  transform: rotate(90deg);
+  color: var(--ac-1);
+  transform: scale(1.2);
+  outline: none;
 }
 
-/* --- Responsive Desktop --- */
+/* Scrollbar lux */
+.modal::-webkit-scrollbar {
+  width: 8px;
+}
+.modal::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--r-sm);
+}
+.modal::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--ac-1), var(--ac-2));
+  border-radius: var(--r-sm);
+}
+
+/* Pour les enfants (form, contenu) */
+.modal > * {
+  margin-bottom: var(--sp-4);
+}
+
+/* Responsive mobile first */
 @media (min-width: 768px) {
   .modal {
-    width: 70%;
-    max-width: 720px;
-    padding: 2.5rem 2rem;
+    padding: var(--sp-8);
   }
 }
+
