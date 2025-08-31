@@ -34,7 +34,7 @@ export default function About() {
           <button
             className={styles.ctaButton}
             onClick={() =>
-              window.open("https://calendly.com/belkalemaghiles/30min", "_blank")
+              window.open("https://calendly.com/belkalemaghiles/nouvelle-reunion", "_blank")
             }
           >
             {t.about?.cta || "Parlez de votre projet"}

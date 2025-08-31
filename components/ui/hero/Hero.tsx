@@ -23,7 +23,7 @@ export default function HeroLandingImproved() {
      { src: '/images/logo-awa.jpg', alt: 'Logo Awa Consulting' },
   ];
 
-  const calendlyUrl = 'https://calendly.com/belkalemaghiles/30min';
+  const calendlyUrl = 'https://calendly.com/belkalemaghiles/nouvelle-reunion';
 
   return (
     <section className={styles.hero} aria-labelledby="hero-title">
