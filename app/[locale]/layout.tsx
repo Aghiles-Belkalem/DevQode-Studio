@@ -5,6 +5,7 @@ import "@/styles/globals.css";
 import Header from "@/components/ui/header/Header";
 import Footer from "@/components/ui/footer/Footer";
 import { Providers } from "./providers";
+import { Analytics } from "@vercel/analytics/next"
 
 import { getTranslations } from "../../hooks/getTranslations";
 
@@ -117,6 +118,7 @@ export default async function RootLayout(props: { children: React.ReactNode; par
           {children}
           <Footer />
         </Providers>
+        < Analytics/>
         <div id="modal-root"></div>
       </body>
     </html>
