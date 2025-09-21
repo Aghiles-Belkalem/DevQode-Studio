@@ -118,7 +118,7 @@ export default async function RootLayout(props: { children: React.ReactNode; par
           {children}
           <Footer />
         </Providers>
-        < Analytics/>
+        <Analytics/>
         <div id="modal-root"></div>
       </body>
     </html>
